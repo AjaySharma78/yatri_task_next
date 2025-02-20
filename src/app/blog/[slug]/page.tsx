@@ -1,7 +1,8 @@
 "use client";
+
 import { BlogPage } from "@/components/BlogPage";
 import { BlogPageSkeleton } from "@/components/BlogPageSkeleton";
-import { BlogCardProps, BlogData } from "@/interface/blogInterface";
+import { BlogData } from "@/interface/blogInterface";
 import { blogData } from "@/libs/data";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
