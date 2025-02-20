@@ -1,31 +1,45 @@
 "use client";
-import {BlogCardProps } from "@/interface/blogInterface";
 import { formatDate } from "@/utility/format";
 import Image from "next/image";
+import apppwriteService from "@/appwrite/config";
+import parse from "html-react-parser";
+export interface BlogData {
+  $collectionId: string;
+  $createdAt: string;
+  $databaseId: string;
+  $id: string;
+  $permissions: string[];
+  $updatedAt: string;
+  content: string;
+  featuredImage: string;
+  status: string;
+  title: string;
+  userId: string;
+}
+interface BlogCardProps {
+  data: BlogData;
+}
 export const BlogPage: React.FC<BlogCardProps> = ({ data }) => {
 
   return data ? (
-    <div className="py-8 dark:bg-black">
-      <div className="w-full bg-black/10 dark:bg-blue-gray-900 p-5 rounded-xl ">
+    <div className="flex items-center justify-center py-8 dark:bg-black">
+      <div className="w-11/12 bg-slate-800 dark:bg-blue-gray-900 p-5 rounded-xl ">
         <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
-          <div className="w-full">
+          <div className="w-full relative" style={{ height: "400px" }}>
             <Image
-             src={data.thumbnail}
-             width={500}
-              height={500}
+              src={`${apppwriteService.getFilePreview(data.featuredImage)}`}
               alt="thumbnail"
-              layout="responsive"
-              className="w-full rounded-xl h-48 md:h-[30rem]"
-            >
-            </Image>
+              fill
+              priority
+              className="rounded-xl object-cover"
+            />
           </div>
         </div>
         <div className="w-full mb-6">
           <h1 className="text-2xl font-bold">{data.title}</h1>
-          <p>{data.summary} </p>
-          <p className="text-gray-700 text-sm">Created At: {formatDate(data.createdAt)} | Read By : {data.read_by}</p>
+          <p className="text-gray-600 text-sm">Created At: {formatDate(data.$createdAt)}</p>
         </div>
-        <div className="browser-css">{data.description}</div>
+        <div className="browser-css">{parse(data.content)}</div>
       </div>
     </div>
   ) : null;

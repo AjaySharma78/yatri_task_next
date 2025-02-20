@@ -1,15 +1,16 @@
 export interface BlogData {
-    _id: string;
-    thumbnail: string;
-    title: string;
-    description: string;
-    read_by: number;
-    isPublished: boolean;
-    videoOwner: string;
-    createdAt: string;
-    summary: string;
-  }
- 
+  $collectionId: string;
+  $createdAt: string;
+  $databaseId: string;
+  $id: string;
+  $permissions: string[];
+  $updatedAt: string;
+  content: string;
+  featuredImage: string;
+  status: string;
+  title: string;
+  userId: string;
+}
 export interface BlogCardProps {
-    data: BlogData;
+  data: BlogData;
 }

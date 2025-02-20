@@ -1,8 +1,8 @@
 export const BlogPageSkeleton = () => {
     return (
       <>
-        <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
-          <div className="w-full">
+        <div className="w-11/12 flex justify-center mb-4 relative border rounded-xl p-2">
+          <div className="w-full h-56">
             <div
               style={{
                 backgroundImage: `url(${""})`,

@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.pixabay.com',
+        hostname: 'cloud.appwrite.io',
         port: '',
         pathname: '/**',
       },
