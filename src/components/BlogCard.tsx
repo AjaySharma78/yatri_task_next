@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import { BlogCardProps } from '@/interface/blogInterface';
 import { formatDate } from '@/utility/format';
+import Image from 'next/image';
 export const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
      
   return (
@@ -13,7 +14,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
         href={`/blog/${data._id}`}
         className={`w-full h-52 relative`}
       >
-        <img
+        <Image
           src={data.thumbnail}
           alt={data.title}
           className="w-full h-full object-cover rounded-md"
