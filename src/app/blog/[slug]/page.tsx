@@ -1,6 +1,7 @@
 "use client";
 import { BlogPage } from "@/components/BlogPage";
 import { BlogPageSkeleton } from "@/components/BlogPageSkeleton";
+import { BlogCardProps, BlogData } from "@/interface/blogInterface";
 import { blogData } from "@/libs/data";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -16,7 +17,7 @@ const Page: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const post = blogData.find((post: any) => post._id === params.slug);
+  const post = blogData.find((post: BlogData) => post._id === params.slug);
   return post ? (
     isLoading ? (
       <div className="w-full bg-black/10 dark:bg-blue-gray-900 p-5 rounded-xl animate-pulse">
