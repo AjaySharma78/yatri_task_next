@@ -4,7 +4,7 @@ import { BlogPageSkeleton } from "@/components/BlogPageSkeleton";
 import { blogData } from "@/libs/data";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-const page = () => {
+const Page: React.FC = () => {
   const params = useParams();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -34,4 +34,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
