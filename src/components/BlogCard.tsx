@@ -12,14 +12,14 @@ export const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
     >
     <Link
         href={`/blog/${data._id}`}
-        className={`w-full h-52 relative`}
+        className={`w-full h-full relative`}
       >
         <Image
           src={data.thumbnail}
           alt={data.title}
-          width={500}
-          height={300}
-          className="object-cover rounded-md"
+          width={300}
+          height={200}
+          className="w-full object-cover rounded-md"
         />
       </Link>
       <div className="flex justify-between items-center p-2 h-20">
