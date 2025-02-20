@@ -1,6 +1,7 @@
 "use client";
 import {BlogCardProps } from "@/interface/blogInterface";
 import { formatDate } from "@/utility/format";
+import Image from "next/image";
 export const BlogPage: React.FC<BlogCardProps> = ({ data }) => {
 
   return data ? (
@@ -8,16 +9,15 @@ export const BlogPage: React.FC<BlogCardProps> = ({ data }) => {
       <div className="w-full bg-black/10 dark:bg-blue-gray-900 p-5 rounded-xl ">
         <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
           <div className="w-full">
-            <div
-              style={{
-                backgroundImage: `url(${data.thumbnail})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                width: "100%",
-              }}
-              className="rounded-xl h-48 md:h-[30rem]"
+            <Image
+             src={data.thumbnail}
+             width={500}
+              height={500}
+              alt="thumbnail"
+              layout="responsive"
+              className="w-full rounded-xl h-48 md:h-[30rem]"
             >
-            </div>
+            </Image>
           </div>
         </div>
         <div className="w-full mb-6">

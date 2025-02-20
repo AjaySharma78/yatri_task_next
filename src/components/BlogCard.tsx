@@ -17,7 +17,9 @@ export const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
         <Image
           src={data.thumbnail}
           alt={data.title}
-          className="w-full h-full object-cover rounded-md"
+          width={500}
+          height={300}
+          className="object-cover rounded-md"
         />
       </Link>
       <div className="flex justify-between items-center p-2 h-20">
