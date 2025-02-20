@@ -30,7 +30,7 @@ function Navbar({ menuClicked }: MenuProps) {
           className="flex items-center justify-center lg:justify-start gap-2"
         >
           <span className="hidden lg:block text-white font-serif font-bold">
-            Aakirt
+            XYZ
           </span>
         </Link>
       </div>
