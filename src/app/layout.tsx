@@ -32,7 +32,6 @@ export default function RootLayout({
         <Navbar
           menuClicked={menuClick}
           isMenuOpen={isMenuOpen}
-
         />
         {children}
       </body>
